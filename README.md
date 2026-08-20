@@ -20,6 +20,16 @@ No hace falta cuenta de GitHub ni configurar nada: el repo es público y se desc
 
 > **Este repo es público y no contiene credenciales.** Las claves del Lab viven en variables de entorno de cada persona, nunca aquí. Si alguna vez tienes que pegar un token en un archivo, ese archivo no va al repo.
 
+### Cuando la skill se actualice
+
+`/plugin update` no siempre recoge los cambios. Lo que funciona seguro son estos tres, en este orden:
+
+```
+/plugin marketplace update charlysway
+/plugin uninstall charlysway-web
+/plugin install charlysway-web@charlysway
+```
+
 ## Qué te da
 
 | Skill | Para qué |
