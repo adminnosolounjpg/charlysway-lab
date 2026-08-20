@@ -1,0 +1,15 @@
+{
+  "name": "charlysway",
+  "owner": {
+    "name": "Cabaña Studio",
+    "url": "https://humbertocabana.com"
+  },
+  "plugins": [
+    {
+      "name": "charlysway-web",
+      "source": "./plugins/charlysway-web",
+      "description": "Marca de Charly's Way + publicación en el lab. Incluye /charlysway-web:cw-marca y /charlysway-web:cw-publicar",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Credenciales — nunca al repo
+.env
+.env.*
+!.env.example
+*.token
+.dev.vars
+
+# Cloudflare / wrangler
+.wrangler/
+dist/
+
+# Node
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporales
+*.log
+*.tmp

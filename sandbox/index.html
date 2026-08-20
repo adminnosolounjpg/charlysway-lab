@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>El Lab · Charly's Way</title>
+<link rel="icon" href="https://lp.charlysway.com/brandkit/assets/logos/logo-cw-azul.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+:root{
+  --cw-azul:#098cb6;--cw-naranja:#f8774d;--cw-oscuro:#122d44;--cw-blanco:#fff;
+  --cw-naranja-hover:#fa8a64;--cw-tinta:#0a0a0a;--cw-tinta-suave:#475569;
+  --cw-card:#eef4f8;--cw-borde:#d9e6ee;
+  --cw-display:'Antonio',sans-serif;--cw-texto:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --cw-h1:clamp(2rem,1.4rem + 2.6vw,3.25rem);--cw-h2:clamp(1.5rem,1.2rem + 1.4vw,2.25rem);
+  --cw-body:clamp(1rem,.96rem + .2vw,1.125rem);--cw-radio-boton:8px;--cw-radio-card:24px;
+  --cw-seccion:clamp(3rem,6vw,5.5rem);--cw-ancho:1080px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--cw-texto);font-size:var(--cw-body);line-height:1.6;color:var(--cw-tinta);background:var(--cw-blanco)}
+.envoltorio{max-width:var(--cw-ancho);margin:0 auto;padding:0 24px}
+h1,h2{font-family:var(--cw-display);text-transform:uppercase;line-height:1.05;margin:0 0 .4em}
+h1{font-size:var(--cw-h1);font-weight:600;color:var(--cw-blanco)}
+h2{font-size:var(--cw-h2);font-weight:400;color:var(--cw-oscuro)}
+h3{font-size:1.25rem;font-weight:700;color:var(--cw-oscuro);margin:0 0 .5em}
+p{max-width:62ch}
+.cabecera{background:var(--cw-blanco);border-bottom:1.5px solid var(--cw-borde)}
+.cabecera .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 24px}
+.cabecera img{height:40px;width:auto;display:block}
+/* Etiqueta pequeña: Poppins Bold mayúsculas. Antonio solo va en titulares grandes. */
+.marca-lab{font-weight:700;text-transform:uppercase;color:var(--cw-azul);font-size:.875rem;letter-spacing:.08em}
+.etiqueta{display:inline-block;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8125rem;margin:0 0 12px;color:var(--cw-blanco);opacity:.85}
+.hero{background:var(--cw-azul) url('https://lp.charlysway.com/brandkit/assets/fotos/BG-03.jpg') center/cover no-repeat;color:var(--cw-blanco);padding:var(--cw-seccion) 0}
+.hero p{font-size:1.125rem;opacity:.95}
+.claro{background:var(--cw-blanco) url('https://lp.charlysway.com/brandkit/assets/fotos/bg-line-01-scaled.jpg') top center/cover no-repeat;padding:var(--cw-seccion) 0}
+.blanco{background:var(--cw-blanco);padding:var(--cw-seccion) 0}
+.rejilla{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:32px}
+.card{background:var(--cw-card);border:1.5px solid var(--cw-borde);border-radius:var(--cw-radio-card);padding:28px}
+.card p{margin-bottom:0;color:var(--cw-tinta-suave)}
+.card a{color:var(--cw-azul);font-weight:600}
+.reglas{list-style:none;padding:0;margin:24px 0;max-width:62ch}
+.reglas li{position:relative;padding-left:32px;margin-bottom:12px}
+.reglas li::before{content:"✓";position:absolute;left:0;color:var(--cw-naranja);font-weight:700;font-size:1.125rem}
+.reglas.no li::before{content:"✕"}
+.aviso{background:var(--cw-card);border:1.5px solid var(--cw-borde);border-radius:var(--cw-radio-card);padding:24px 28px;margin-top:32px}
+.aviso p{margin:0}
+code{background:var(--cw-card);border:1px solid var(--cw-borde);border-radius:6px;padding:2px 7px;font-size:.9em}
+.pie{background:var(--cw-oscuro);color:var(--cw-blanco);padding:36px 0;font-size:.875rem}
+.pie p{margin:0;max-width:none}
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="envoltorio">
+    <img src="https://lp.charlysway.com/brandkit/assets/logos/logo-completo-azul.svg" alt="Charly's Way">
+    <span class="marca-lab">El Lab</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="envoltorio">
+    <p class="etiqueta">Entorno de pruebas</p>
+    <h1>Aquí no se rompe nada</h1>
+    <p>Este es el patio del equipo. Publica lo que quieras, prueba, equivócate y vuelve a subirlo. Está separado de las webs de verdad, así que nada de lo que hagas aquí puede tocarlas.</p>
+  </div>
+</section>
+
+<section class="claro">
+  <div class="envoltorio">
+    <h2>Cómo funciona</h2>
+    <p>Cada pieza vive en su carpeta, y el nombre de la carpeta es su dirección. Si creas <code>sandbox/guia-onboarding/index.html</code>, tu página queda en <code>lab.charlysway.com/guia-onboarding/</code>.</p>
+
+    <div class="rejilla">
+      <article class="card">
+        <h3>1 · Constrúyela</h3>
+        <p>Pídesela a Claude con la skill de marca puesta. Sale con los colores, las tipografías y los componentes de Charly's Way.</p>
+      </article>
+      <article class="card">
+        <h3>2 · Publícala</h3>
+        <p>Un comando y tienes URL. Mientras practicas, cada persona publica en la suya y no pisa a nadie.</p>
+      </article>
+      <article class="card">
+        <h3>3 · Compruébala</h3>
+        <p>Abre la URL de verdad. En la vista previa del chat las imágenes salen rotas siempre, y no significa que esté mal.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="blanco">
+  <div class="envoltorio">
+    <h2>Lo que sí</h2>
+    <ul class="reglas">
+      <li>Páginas internas, guías, one-pagers, índices de recursos</li>
+      <li>Maquetas y pruebas de concepto para enseñar una idea</li>
+      <li>Piezas de marca para uso interno del equipo</li>
+    </ul>
+
+    <h2 style="margin-top:2.5rem">Lo que no</h2>
+    <ul class="reglas no">
+      <li>Datos de personas: leads, alumnos, emails, teléfonos, capturas del CRM</li>
+      <li>Formularios conectados que envíen información a algún sitio</li>
+      <li>Claves, tokens o contraseñas dentro del HTML</li>
+      <li>Cifras de facturación, contratos o cualquier cosa confidencial</li>
+      <li>Tocar las webs de producción. Eso pasa siempre por Tecnología</li>
+    </ul>
+
+    <div class="aviso">
+      <p><strong>Ojo con el link.</strong> El lab no aparece en Google, pero cualquiera que tenga la dirección puede entrar. Trátalo como algo semipúblico: si no lo pondrías en una pizarra de la oficina, no lo subas aquí.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="envoltorio">
+    <p>El Lab de Charly's Way · Entorno de pruebas, separado de producción</p>
+  </div>
+</footer>
+
+</body>
+</html>
