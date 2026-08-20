@@ -57,4 +57,4 @@ Esto es el lenguaje visual real de CW, y conviene reproducirlo:
 
 - Las landings de Google Ads de la academy son páginas duplicadas, cada una con su copia del contenido. No hay plantilla compartida: cambiar una no cambia las demás.
 - La academy tiene carga diferida agresiva. El contenido de abajo no aparece en el HTML crudo ni en capturas automáticas, aunque un visitante real sí lo ve.
-- La cifra de alumnos que aparece en las landings ("más de 22.000") está más actualizada que la de los documentos internos. Si ves una cifra distinta en un PDF viejo, pregunta antes de "corregir".
+- La cifra de alumnos que aparece en las landings es la más actualizada. Si encuentras otra distinta en un documento antiguo, pregunta antes de "corregir" nada.

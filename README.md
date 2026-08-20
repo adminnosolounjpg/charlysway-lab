@@ -10,17 +10,15 @@ Dos cosas viven en este repo:
 Dentro de Claude Code, dos comandos:
 
 ```
-/plugin marketplace add <url-del-repo>
+/plugin marketplace add adminnosolounjpg/charlysway-lab
 /plugin install charlysway-web@charlysway
 ```
 
 Reinicia Claude Code y ya está. Comprueba que funciona escribiendo `/cw-marca`.
 
-Mientras el repo no esté en GitHub, la primera línea usa la ruta local de la carpeta:
+No hace falta cuenta de GitHub ni configurar nada: el repo es público y se descarga solo.
 
-```
-/plugin marketplace add ./cw-lab
-```
+> **Este repo es público y no contiene credenciales.** Las claves del Lab viven en variables de entorno de cada persona, nunca aquí. Si alguna vez tienes que pegar un token en un archivo, ese archivo no va al repo.
 
 ## Qué te da
 

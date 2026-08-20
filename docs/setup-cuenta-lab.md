@@ -20,7 +20,7 @@ La rama de producción del proyecto tiene que ser **`main`**. Es lo que hace que
 
 ## 3. Apuntar el subdominio
 
-`lab.charlysway.com` es un subdominio del dominio del cliente, así que este paso lo tiene que hacer quien lleve el DNS de `charlysway.com` (Maitane o Ryan). Es un registro y nada más:
+`lab.charlysway.com` es un subdominio del dominio principal, así que este paso lo hace quien lleve el DNS de `charlysway.com`. Es un registro y nada más:
 
 - En **Pages → cw-lab → Custom domains**, añadir `lab.charlysway.com`. Cloudflare dará un destino tipo `cw-lab.pages.dev`.
 - En la zona DNS de `charlysway.com`, crear un **CNAME** `lab` → ese destino.
