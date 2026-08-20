@@ -10,7 +10,7 @@ Dos cosas viven en este repo:
 Dentro de Claude Code, dos comandos:
 
 ```
-/plugin marketplace add adminnosolounjpg/charlysway-lab
+/plugin marketplace add humberto-ui/charlysway-lab
 /plugin install charlysway-web@charlysway
 ```
 
