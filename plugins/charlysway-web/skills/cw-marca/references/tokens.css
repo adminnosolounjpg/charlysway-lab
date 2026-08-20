@@ -8,18 +8,18 @@
 
 :root {
   /* --- Color: los cuatro que mandan --- */
-  --cw-azul:          #098cb6;  /* principal: titulares, fondos de sección, iconos */
-  --cw-naranja:       #f8774d;  /* CTAs y acentos. Nunca cuerpos de texto */
-  --cw-oscuro:        #122d44;  /* fondos oscuros y titulares sobre claro */
+  --cw-azul:          #0B89B0;  /* principal: titulares, fondos de sección, iconos */
+  --cw-naranja:       #F47149;  /* CTAs y acentos. Nunca cuerpos de texto */
+  --cw-oscuro:        #243156;  /* fondos oscuros y titulares sobre claro */
   --cw-blanco:        #ffffff;
 
   /* --- Color: apoyo --- */
-  --cw-azul-hondo:    #07759a;  /* hover sobre azul */
-  --cw-naranja-hover: #fa8a64;  /* hover sobre naranja */
-  --cw-tinta:         #0a0a0a;  /* cuerpos de texto sobre claro */
-  --cw-tinta-suave:   #475569;  /* texto secundario, pies de foto */
-  --cw-card:          #eef4f8;  /* fondo de tarjetas */
-  --cw-borde:         #d9e6ee;  /* bordes finos: la marca separa con borde, no con sombra */
+  --cw-azul-hondo:    #086A8A;  /* hover sobre azul */
+  --cw-naranja-hover: #E25D33;  /* hover sobre naranja */
+  --cw-tinta:         #243156;  /* cuerpos de texto sobre claro */
+  --cw-tinta-suave:   #595959;  /* texto secundario, pies de foto */
+  --cw-card:          #EDF1F8;  /* fondo de tarjetas */
+  --cw-borde:         #E1E7EF;  /* bordes finos: la marca separa con borde, no con sombra */
 
   /* --- Tipografía --- */
   --cw-display: 'Antonio', sans-serif;   /* SOLO titulares, SIEMPRE mayúsculas y grandes */

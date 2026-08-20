@@ -84,8 +84,10 @@ docs/setup-cuenta-lab.md             cómo se montó la cuenta y el subdominio
 
 ## Decisiones de marca que conviene conocer
 
-- **En digital la fuente de cuerpo es Poppins**, no Lato. El brand kit dice Lato porque aplica al manual impreso; todo lo publicado está en Poppins.
-- **El azul es `#098cb6` y el naranja `#f8774d`**, que son los que usan las cuatro webs. El manual usa `#0B89B0` y `#F47149`, el mismo color con otro matiz.
+- **La fuente de cuerpo es Poppins**, no Lato. El brand kit dice Lato porque aplica al manual impreso; todo lo publicado está en Poppins.
+- **El azul es `#0B89B0` y el naranja `#F47149`**, los del manual y el campus. Las landings públicas usan un matiz ligeramente distinto (`#098cb6` / `#f8774d`), que es deriva histórica.
+- **En texto pequeño, el azul va en `#086A8A`.** El azul de marca sobre blanco no llega al mínimo de contraste por debajo de 18px.
 - **Sin sombras.** Las landings antiguas tienen, pero es deuda pendiente, no un ejemplo a seguir.
+- **El campus tiene su propio design system.** Para maquetar dentro de la plataforma manda ese documento, no esta skill.
 
 El detalle está en `plugins/charlysway-web/skills/cw-marca/references/webs-reales.md`.

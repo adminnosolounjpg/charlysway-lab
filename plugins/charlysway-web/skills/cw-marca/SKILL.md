@@ -20,19 +20,22 @@ Cuatro colores mandan. Todo lo demás es apoyo.
 
 | Rol | Token | HEX | Uso |
 |---|---|---|---|
-| Azul Charly | `--cw-azul` | `#098cb6` | Color principal: titulares, fondos de sección, iconos |
-| Naranja Charly | `--cw-naranja` | `#f8774d` | CTAs y acentos. **Nunca** para cuerpos de texto |
-| Azul oscuro | `--cw-oscuro` | `#122d44` | Fondos oscuros y titulares sobre claro |
+| Azul Charly | `--cw-azul` | `#0B89B0` | Color principal: titulares, fondos de sección, iconos |
+| Naranja Charly | `--cw-naranja` | `#F47149` | CTAs y acentos. **Nunca** para cuerpos de texto |
+| Azul oscuro | `--cw-oscuro` | `#243156` | Fondos oscuros y titulares sobre claro |
 | Blanco nieve | `--cw-blanco` | `#ffffff` | Texto sobre azul/oscuro, y fondos |
 
-Apoyo: `--cw-azul-hondo #07759a` (hover de azul), `--cw-naranja-hover #fa8a64`, `--cw-tinta #0a0a0a` (cuerpos de texto), `--cw-tinta-suave #475569` (texto secundario), `--cw-card #eef4f8` (fondo de tarjetas), `--cw-borde #d9e6ee`.
+Apoyo: `--cw-azul-hondo #086A8A` (hover de azul), `--cw-naranja-hover #E25D33`, `--cw-tinta #243156` (cuerpos de texto), `--cw-tinta-suave #595959` (texto secundario), `--cw-card #EDF1F8` (fondo de tarjetas), `--cw-borde #E1E7EF`.
 
 Reglas:
 - Texto sobre fondo claro → `--cw-tinta`. Texto sobre azul u oscuro → blanco.
 - Sin degradados. Sin colores inventados. Sin transparencias que ensucien el color.
 - El naranja es el color de "haz clic". Si lo pones en todas partes, deja de funcionar.
+- **El azul de marca como texto pequeño no cumple accesibilidad.** `#0B89B0` sobre blanco da 4,03:1, insuficiente para texto por debajo de 18px. Para etiquetas, enlaces y textos pequeños en azul usa `--cw-azul-hondo` (`#086A8A`). El azul normal sigue siendo correcto en titulares grandes, fondos, bordes e iconos.
 
-> **Nota sobre el manual impreso:** el manual de marca y el brand kit usan `#0B89B0` y `#F47149`. Las cuatro webs (charlysway.com, la academy, el método y lp.charlysway.com) usan `#098cb6` y `#f8774d`. Son el mismo azul y el mismo naranja con un matiz distinto. **En digital manda esta skill**, para que lo que hagas case con lo que ya está publicado. Detalle en [references/webs-reales.md](references/webs-reales.md).
+> **Si maquetas dentro del campus, manda su design system, no esta skill.** El campus (la plataforma de alumnos) tiene su propio `design-system.md` con estos mismos colores ya tokenizados y con toda la familia de derivados. Esta skill es para piezas de marketing y páginas internas.
+
+> **Por qué estos colores y no los de las landings.** Las landings públicas usan `#098cb6` y `#f8774d`, un matiz distinto del mismo azul y el mismo naranja. Es deriva histórica: el manual, el brand kit y el campus coinciden en los valores de arriba, así que son los que manda esta skill. Detalle en [references/webs-reales.md](references/webs-reales.md).
 
 ## Tipografías
 
@@ -60,7 +63,9 @@ Jerarquía, aplícala tal cual:
 | Cita | Poppins 400 itálica | `--cw-azul` |
 | CTA | Poppins 700, MAYÚSCULAS | fondo naranja, texto blanco |
 
-> El brand kit dice Lato porque aplica al manual impreso. **En web siempre Poppins.** Es decisión expresa: todo lo publicado está construido en Poppins.
+> **Sobre la fuente de cuerpo:** el brand kit dice Lato porque aplica al manual impreso. En web siempre Poppins, y es decisión expresa. Las cuatro webs públicas y el campus están construidos en Poppins.
+
+> **Sobre Antonio:** las webs públicas lo usan en titulares y aquí también. El campus, en cambio, lo retiró y usa Lato para los títulos. No es un error de nadie: son dos contextos con decisiones distintas. Para piezas de marketing e internas, Antonio. Para pantallas del campus, su design system.
 
 ## Formas y lenguaje visual
 
