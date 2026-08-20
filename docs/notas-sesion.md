@@ -10,7 +10,16 @@ Duración: 55 minutos. Formato: demostración corta y práctica larga.
 - [ ] Cuenta del Lab creada y `CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_API_TOKEN` repartidos.
 - [ ] Tú con dos pestañas abiertas: una pieza hecha sin la skill y otra con la skill, para el arranque.
 - [ ] El encargo de práctica elegido y escrito en un sitio donde todos lo vean.
-- [ ] Kit del alumno repartido ([kit-alumno.md](kit-alumno.md)).
+
+## Encargos de práctica (elige uno)
+
+El mismo para todos, para poder comparar y ayudar rápido:
+
+1. **Página de bienvenida** para alguien que entra nuevo al equipo: qué hace los primeros días y qué enlaces necesita.
+2. **Guía de un proceso** que hoy se explica por WhatsApp veinte veces al mes.
+3. **One-pager de una idea** para enseñarla en una reunión en vez de contarla.
+
+El primero es el más seguro: todos entienden el encargo y nadie se atasca decidiendo qué hacer.
 
 ## Minutado
 
@@ -31,7 +40,7 @@ Dos comandos, en directo, y que los escriban a la vez que tú:
 /plugin install charlysway-web@charlysway
 ```
 
-Reiniciar Claude Code y comprobar con `/cw-marca` que aparece.
+Reiniciar Claude Code y comprobar con `/cw-empezar` que aparece.
 
 Si esto dura más de cuatro minutos, algo está mal preparado. Ten a mano el plan B: que se pongan con quien lo tenga funcionando y sigan mirando.
 
@@ -73,7 +82,9 @@ Y deja clara la frontera de "hasta aquí llegas tú": páginas internas, guías,
 
 ### 48-55 · Preguntas y cierre
 
-Cierra con el kit del alumno y una sola tarea: **que cada uno publique una pieza suya esta semana**. Una de verdad, de algo que necesite.
+Recuérdales que todo lo que has contado lo tienen dentro de Claude Code escribiendo `/cw-empezar`, así que no hay nada que memorizar ni ningún PDF que buscar.
+
+Y cierra con una sola tarea: **que cada uno publique una pieza suya esta semana**. Una de verdad, de algo que necesite.
 
 Sin esa tarea, en quince días nadie se acuerda de que esto existe.
 

@@ -24,10 +24,11 @@ No hace falta cuenta de GitHub ni configurar nada: el repo es público y se desc
 
 | Skill | Para qué |
 |---|---|
-| `/charlysway-web:cw-marca` | Construir o revisar cualquier pieza con la marca puesta: colores, tipografías, componentes, voz |
-| `/charlysway-web:cw-publicar` | Publicar la pieza en el Lab y obtener su URL |
+| `/cw-empezar` | Por dónde empiezo. Te lleva de un HTML cualquiera a una página publicada con su enlace |
+| `/cw-marca` | Construir o revisar una pieza con la marca puesta: colores, tipografías, componentes, voz |
+| `/cw-publicar` | Publicar la pieza en el Lab y obtener su URL |
 
-No hace falta invocarlas a mano. Si le pides a Claude "hazme una página de bienvenida para el equipo", carga la de marca sola.
+Las dos últimas no hace falta invocarlas a mano. Si le pides a Claude "hazme una página de bienvenida para el equipo", carga la de marca sola. `/cw-empezar` es la que escribes tú el primer día.
 
 ## Publicar una pieza
 
@@ -69,6 +70,7 @@ npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-d
 .claude-plugin/marketplace.json      catálogo para /plugin marketplace add
 plugins/charlysway-web/
   .claude-plugin/plugin.json
+  skills/cw-empezar/SKILL.md         punto de entrada: de un HTML a una página publicada
   skills/cw-marca/SKILL.md           identidad de marca
     references/tokens.css            colores, tipos y escala listos para pegar
     references/plantilla.html        página de arranque completa
@@ -80,6 +82,7 @@ sandbox/                             lo que se publica en lab.charlysway.com
   index.html                         portada del Lab con las reglas
   bienvenida-equipo/index.html       pieza de ejemplo
 docs/setup-cuenta-lab.md             cómo se montó la cuenta y el subdominio
+docs/notas-sesion.md                 uso interno: cómo conducir la sesión con el equipo
 ```
 
 ## Decisiones de marca que conviene conocer
