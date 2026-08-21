@@ -41,8 +41,10 @@ Lo que va a hacer: sustituir la paleta por la de la marca, poner Antonio en los 
 Tu página va en su propia carpeta dentro de `sandbox/`, y el nombre de la carpeta es su dirección:
 
 ```
-sandbox/guia-onboarding/index.html   →   lab.charlysway.com/guia-onboarding/
+sandbox/guia-onboarding/index.html   →   cw-lab.pages.dev/guia-onboarding/
 ```
+
+(Cuando se active el dominio propio será `lab.charlysway.com/guia-onboarding/`. Las dos direcciones servirán la misma página.)
 
 El archivo tiene que llamarse `index.html`. La carpeta, en minúsculas, con guiones y sin acentos.
 

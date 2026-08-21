@@ -19,9 +19,11 @@ Cada pieza vive en su carpeta, y el nombre de la carpeta es la URL:
 
 ```
 sandbox/
-  bienvenida-equipo/index.html   →  lab.charlysway.com/bienvenida-equipo/
-  guia-onboarding/index.html     →  lab.charlysway.com/guia-onboarding/
+  bienvenida-equipo/index.html   →  cw-lab.pages.dev/bienvenida-equipo/
+  guia-onboarding/index.html     →  cw-lab.pages.dev/guia-onboarding/
 ```
+
+El dominio propio (`lab.charlysway.com`) está pendiente de un registro DNS. Cuando se active, servirá exactamente lo mismo y las dos direcciones valdrán.
 
 Nombres de carpeta en minúsculas, con guiones, sin acentos ni espacios.
 
