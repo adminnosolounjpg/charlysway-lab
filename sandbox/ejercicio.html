@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ship o sheep · Ejercicio de pronunciación · Charly's Way</title>
+<link rel="icon" href="https://lp.charlysway.com/brandkit/assets/logos/logo-cw-azul.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root{
+  --cw-azul:#0B89B0; --cw-naranja:#F47149; --cw-oscuro:#243156; --cw-blanco:#fff;
+  --cw-azul-hondo:#086A8A; --cw-naranja-hover:#E25D33; --cw-tinta:#243156;
+  --cw-tinta-suave:#595959; --cw-card:#EDF1F8; --cw-borde:#E1E7EF;
+  --cw-display:'Antonio',sans-serif;
+  --cw-texto:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --cw-h1:clamp(2rem,1.4rem + 2.6vw,3.25rem);
+  --cw-h2:clamp(1.5rem,1.2rem + 1.4vw,2.25rem);
+  --cw-body:clamp(1rem,.96rem + .2vw,1.125rem);
+  --cw-radio-boton:8px; --cw-radio-card:24px;
+  --cw-seccion:clamp(3rem,6vw,5.5rem); --cw-ancho:1080px;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--cw-texto);font-size:var(--cw-body);line-height:1.6;color:var(--cw-tinta);background:var(--cw-blanco)}
+.envoltorio{max-width:var(--cw-ancho);margin:0 auto;padding:0 24px}
+
+h1,h2{font-family:var(--cw-display);text-transform:uppercase;line-height:1.05;margin:0 0 .4em}
+h1{font-size:var(--cw-h1);font-weight:600;color:var(--cw-azul)}
+h2{font-size:var(--cw-h2);font-weight:400;color:var(--cw-oscuro)}
+h3{font-size:1.25rem;font-weight:700;color:var(--cw-oscuro);margin:0 0 .5em}
+p{max-width:62ch}
+
+.cabecera{background:var(--cw-blanco);border-bottom:1.5px solid var(--cw-borde)}
+.cabecera .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:16px;padding-bottom:16px}
+.cabecera img{height:44px;width:auto;display:block}
+.logo-svg{display:none;width:150px;height:auto}
+
+.etiqueta{display:inline-block;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  font-size:.8125rem;color:var(--cw-naranja);margin:0 0 12px}
+
+.hero{background:var(--cw-azul) url('https://lp.charlysway.com/brandkit/assets/fotos/BG-03.jpg') center/cover no-repeat;
+  color:var(--cw-blanco);padding:var(--cw-seccion) 0}
+.hero h1{color:var(--cw-blanco)}
+.hero p{font-size:1.125rem;opacity:.95}
+.hero .etiqueta{color:var(--cw-blanco);opacity:.85}
+
+.claro{background:var(--cw-blanco) url('https://lp.charlysway.com/brandkit/assets/fotos/bg-line-01-scaled.jpg') top center/cover no-repeat;
+  padding:var(--cw-seccion) 0}
+.blanco{background:var(--cw-blanco);padding:var(--cw-seccion) 0}
+
+.cta{display:inline-block;background:var(--cw-naranja);color:var(--cw-blanco);font-weight:700;
+  text-transform:uppercase;text-decoration:none;padding:15px 30px;border-radius:var(--cw-radio-boton);
+  border:none;cursor:pointer;font-size:1rem;font-family:var(--cw-texto);transition:background .15s ease}
+.cta:hover{background:var(--cw-naranja-hover)}
+.cta:disabled{opacity:.5;cursor:default}
+.cta-secundario{background:var(--cw-blanco);color:var(--cw-oscuro);border:1.5px solid var(--cw-borde)}
+.cta-secundario:hover{background:var(--cw-card)}
+
+.rejilla{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:32px}
+.card{background:var(--cw-card);border:1.5px solid var(--cw-borde);border-radius:var(--cw-radio-card);padding:28px}
+.card p{margin-bottom:0;color:var(--cw-tinta-suave)}
+
+/* ---- Ejercicio ---- */
+.panel{background:var(--cw-card);border:1.5px solid var(--cw-borde);border-radius:var(--cw-radio-card);
+  padding:clamp(24px,4vw,44px);margin-top:32px}
+.barra{height:8px;background:var(--cw-blanco);border:1.5px solid var(--cw-borde);border-radius:999px;overflow:hidden}
+.barra span{display:block;height:100%;width:0;background:var(--cw-azul);transition:width .3s ease}
+.marcador{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:.875rem;
+  font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--cw-azul-hondo);margin-bottom:10px}
+.escucha{text-align:center;margin:32px 0 8px}
+.boton-play{display:inline-flex;align-items:center;gap:12px}
+.pista{text-align:center;color:var(--cw-tinta-suave);font-size:.9375rem;margin:14px auto 0;max-width:46ch}
+.opciones{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+@media (max-width:560px){.opciones{grid-template-columns:1fr}}
+.opcion{background:var(--cw-blanco);border:1.5px solid var(--cw-borde);border-radius:var(--cw-radio-card);
+  padding:22px 16px;cursor:pointer;font-family:var(--cw-texto);text-align:center;transition:border-color .15s ease,background .15s ease}
+.opcion:hover:not(:disabled){background:var(--cw-card);border-color:var(--cw-azul)}
+.opcion:disabled{cursor:default}
+.opcion b{display:block;font-size:1.5rem;font-weight:700;color:var(--cw-oscuro);line-height:1.2}
+.opcion i{display:block;font-style:normal;font-size:1rem;color:var(--cw-azul-hondo);margin-top:6px}
+.opcion em{display:block;font-style:normal;font-size:.875rem;color:var(--cw-tinta-suave);margin-top:2px}
+.opcion.acierto{border:2.5px solid var(--cw-azul);background:var(--cw-blanco)}
+.opcion.fallo{border:2.5px solid var(--cw-naranja)}
+.veredicto{margin:26px auto 0;text-align:center;max-width:52ch;font-weight:600;color:var(--cw-oscuro);min-height:1.6em}
+.veredicto span{color:var(--cw-azul-hondo)}
+.acciones{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:26px}
+.oculto{display:none}
+
+/* ---- Frases para repetir ---- */
+.frase{background:var(--cw-blanco);border:1.5px solid var(--cw-borde);border-radius:var(--cw-radio-card);
+  padding:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:18px}
+.frase p{margin:0;font-size:1.25rem;font-weight:600;color:var(--cw-oscuro);max-width:34ch}
+.frase small{display:block;font-weight:400;font-size:.9375rem;color:var(--cw-tinta-suave);margin-top:6px}
+.frase div{display:flex;gap:12px;flex-wrap:wrap}
+.mini{background:var(--cw-blanco);border:1.5px solid var(--cw-borde);border-radius:var(--cw-radio-boton);
+  color:var(--cw-oscuro);font-family:var(--cw-texto);font-weight:700;text-transform:uppercase;font-size:.8125rem;
+  letter-spacing:.04em;padding:11px 18px;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.mini:hover{background:var(--cw-card);border-color:var(--cw-azul)}
+
+.aviso{border:1.5px solid var(--cw-borde);border-left:3px solid var(--cw-naranja);border-radius:var(--cw-radio-boton);
+  background:var(--cw-blanco);padding:18px 22px;margin-top:28px;color:var(--cw-tinta-suave);font-size:.9375rem}
+.aviso p{margin:0;max-width:none}
+
+.checks{list-style:none;padding:0;margin:24px 0}
+.checks li{position:relative;padding-left:32px;margin-bottom:12px}
+.checks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--cw-naranja);font-weight:700;font-size:1.125rem}
+
+.pie{background:var(--cw-oscuro);color:var(--cw-blanco);padding:40px 0;font-size:.875rem}
+.pie a{color:var(--cw-blanco)}
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="envoltorio">
+    <a href="https://charlysway.com" aria-label="Charly's Way">
+      <img src="https://lp.charlysway.com/brandkit/assets/logos/logo-completo-azul.svg" alt="Charly's Way"
+           onerror="this.style.display='none';document.getElementById('logo-alt').style.display='block'">
+      <svg id="logo-alt" class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 4136 1964" fill="#0B89B0" role="img" aria-label="Charly's Way">
+        <path transform="translate(0.0,742) scale(1,-1)" d="M385 752Q448 752 501.5 735.0Q555 718 596.5 687.0Q638 656 664.5 614.0Q691 572 701 522Q706 501 702.5 495.0Q699 489 688 487L513 476Q502 476 499.0 480.5Q496 485 494 495Q486 539 463.5 568.5Q441 598 391 598Q335 598 301.5 548.5Q268 499 268 377Q268 253 298.5 203.5Q329 154 390 154Q440 154 478.5 179.5Q517 205 543 271Q548 283 571 279L696 254Q701 253 707.0 247.0Q713 241 710 221Q707 205 694.0 177.0Q681 149 657.0 116.5Q633 84 595.0 55.5Q557 27 504.5 8.5Q452 -10 383 -10Q276 -10 196.5 40.5Q117 91 73.5 179.5Q30 268 30 381Q30 494 73.5 577.0Q117 660 197.0 706.0Q277 752 385 752Z"/>
+        <path transform="translate(737.0,742) scale(1,-1)" d="M68 0Q42 0 42 25V719Q42 742 61 742H221Q239 742 239 721V472Q239 466 242.5 464.5Q246 463 252 468Q281 496 307.5 511.5Q334 527 360.0 533.5Q386 540 412 540Q486 540 527.0 497.5Q568 455 568 375V30Q568 0 538 0H391Q378 0 373.0 5.5Q368 11 368 25V351Q368 374 354.0 386.5Q340 399 316 399Q301 399 287.5 393.5Q274 388 263.0 377.0Q252 366 242 349V29Q242 0 209 0H68Z"/>
+        <path transform="translate(1342.0,742) scale(1,-1)" d="M314 42Q287 20 251.5 5.0Q216 -10 169 -10Q94 -10 51.5 32.0Q9 74 9 136Q9 195 46.5 239.0Q84 283 153.0 307.5Q222 332 316 332H323Q327 332 332.5 334.5Q338 337 338 346V363Q338 391 323.5 406.0Q309 421 279 421Q258 421 236.0 411.5Q214 402 201 374Q197 366 192.5 363.5Q188 361 174 363L43 389Q36 391 32.5 396.5Q29 402 36 421Q59 485 124.5 512.5Q190 540 288 540Q381 540 433.0 519.0Q485 498 506.5 461.0Q528 424 528 375V27Q528 12 523.5 6.0Q519 0 505 0H368Q355 0 349.5 10.5Q344 21 342 35L341 42Q338 62 314 42ZM338 224Q338 242 323 242H319Q307 242 287.5 237.5Q268 233 249.0 223.5Q230 214 216.5 199.0Q203 184 203 163Q203 142 218.0 129.0Q233 116 260 116Q280 116 293.5 122.0Q307 128 315 135Q324 143 331.0 151.5Q338 160 338 171V224Z"/>
+        <path transform="translate(1915.0,742) scale(1,-1)" d="M67 0Q52 0 46.5 6.0Q41 12 41 25V507Q41 530 60 530H216Q234 530 234 510V454Q234 447 240.0 445.5Q246 444 251 451Q267 476 292.0 496.0Q317 516 345.0 528.0Q373 540 396 540Q433 540 433 520V368Q433 347 413 352Q390 358 365.5 360.5Q341 363 327 363Q311 363 295.5 357.5Q280 352 267.5 342.0Q255 332 248.0 320.0Q241 308 241 295V29Q241 0 208 0H67Z"/>
+        <path transform="translate(2369.0,742) scale(1,-1)" d="M242 29Q242 13 234.0 6.5Q226 0 209 0H67Q40 0 40 25L45 719Q45 742 64 742H224Q242 742 242 721Z"/>
+        <path transform="translate(2653.0,742) scale(1,-1)" d="M102 -165Q71 -165 58.5 -161.0Q46 -157 46 -143V-41Q46 -35 52.0 -28.5Q58 -22 74 -22H145Q162 -22 176.0 -17.0Q190 -12 198.5 -4.5Q207 3 210.5 12.5Q214 22 210 31L16 501Q12 512 17.5 521.0Q23 530 35 530H204Q213 530 220.0 524.0Q227 518 230 510L315 270Q318 261 323.0 260.5Q328 260 332 270L418 510Q422 518 428.5 524.0Q435 530 444 530H556Q568 530 573.0 521.0Q578 512 573 501L378 31Q352 -32 326.5 -70.5Q301 -109 270.0 -129.5Q239 -150 198.5 -157.5Q158 -165 102 -165Z"/>
+        <path transform="translate(3242.0,742) scale(1,-1)" d="M60 411Q51 411 47.0 418.5Q43 426 46 433L88 535Q93 549 91.5 555.5Q90 562 79 564L63 566Q50 568 44.5 572.5Q39 577 39 589V721Q39 742 57 742H204Q221 742 221 724V597Q221 589 217 583L117 432Q110 422 98.5 416.5Q87 411 76 411H60Z"/>
+        <path transform="translate(3495.0,742) scale(1,-1)" d="M373 378Q358 395 334.0 409.5Q310 424 273 424Q247 424 228.0 415.0Q209 406 209 389Q209 382 215.5 375.0Q222 368 249 363L355 341Q448 322 485.5 275.0Q523 228 523 170Q523 112 491.0 72.0Q459 32 402.0 11.0Q345 -10 270 -10Q174 -10 110.0 22.0Q46 54 21 99Q16 108 16.0 116.0Q16 124 23 128L110 172Q123 178 129.5 177.0Q136 176 141 170Q153 157 167.5 143.5Q182 130 206.5 121.0Q231 112 271 113Q292 114 309.0 117.5Q326 121 336.0 129.0Q346 137 346 149Q346 159 337.5 167.0Q329 175 300 180L198 198Q122 212 79.0 250.5Q36 289 35 357Q35 409 62.5 450.5Q90 492 144.0 516.0Q198 540 275 540Q357 540 414.5 510.5Q472 481 494 444Q499 437 502.0 428.0Q505 419 494 414L402 370Q393 366 386.0 368.5Q379 371 373 378Z"/>
+        <path transform="translate(882.5,1644) scale(1,-1)" d="M1052 742Q1072 742 1079.5 730.5Q1087 719 1082 702L879 25Q870 0 843 0H705Q676 0 669 25L565 377Q562 389 558.0 389.5Q554 390 549 375L446 25Q439 0 410 0H267Q240 0 231 25L27 702Q23 719 30.5 730.5Q38 742 57 742H222Q238 742 244.5 736.5Q251 731 254 721L360 350Q363 339 366.5 338.5Q370 338 372 346L477 721Q479 731 486.0 736.5Q493 742 509 742H649Q665 742 671.5 736.5Q678 731 681 721L791 341Q793 335 797.0 334.0Q801 333 802 339L904 721Q906 731 913.0 736.5Q920 742 936 742H1052Z"/>
+        <path transform="translate(1991.5,1644) scale(1,-1)" d="M314 42Q287 20 251.5 5.0Q216 -10 169 -10Q94 -10 51.5 32.0Q9 74 9 136Q9 195 46.5 239.0Q84 283 153.0 307.5Q222 332 316 332H323Q327 332 332.5 334.5Q338 337 338 346V363Q338 391 323.5 406.0Q309 421 279 421Q258 421 236.0 411.5Q214 402 201 374Q197 366 192.5 363.5Q188 361 174 363L43 389Q36 391 32.5 396.5Q29 402 36 421Q59 485 124.5 512.5Q190 540 288 540Q381 540 433.0 519.0Q485 498 506.5 461.0Q528 424 528 375V27Q528 12 523.5 6.0Q519 0 505 0H368Q355 0 349.5 10.5Q344 21 342 35L341 42Q338 62 314 42ZM338 224Q338 242 323 242H319Q307 242 287.5 237.5Q268 233 249.0 223.5Q230 214 216.5 199.0Q203 184 203 163Q203 142 218.0 129.0Q233 116 260 116Q280 116 293.5 122.0Q307 128 315 135Q324 143 331.0 151.5Q338 160 338 171V224Z"/>
+        <path transform="translate(2564.5,1644) scale(1,-1)" d="M102 -165Q71 -165 58.5 -161.0Q46 -157 46 -143V-41Q46 -35 52.0 -28.5Q58 -22 74 -22H145Q162 -22 176.0 -17.0Q190 -12 198.5 -4.5Q207 3 210.5 12.5Q214 22 210 31L16 501Q12 512 17.5 521.0Q23 530 35 530H204Q213 530 220.0 524.0Q227 518 230 510L315 270Q318 261 323.0 260.5Q328 260 332 270L418 510Q422 518 428.5 524.0Q435 530 444 530H556Q568 530 573.0 521.0Q578 512 573 501L378 31Q352 -32 326.5 -70.5Q301 -109 270.0 -129.5Q239 -150 198.5 -157.5Q158 -165 102 -165Z"/>
+      </svg>
+    </a>
+    <a class="cta" href="#ejercicio">Empezar el ejercicio</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="envoltorio">
+    <p class="etiqueta">Ejercicio de pronunciación</p>
+    <h1>Ship no es lo mismo que sheep</h1>
+    <p>En español tienes una sola «i». En inglés hay dos, y confundirlas cambia lo que dices. Ponte los cascos: primero entrenas el oído, luego la boca.</p>
+    <p style="margin-top:28px"><a class="cta" href="#ejercicio">Ponme a prueba</a></p>
+  </div>
+</section>
+
+<section class="claro" id="ejercicio">
+  <div class="envoltorio">
+    <h2>Escucha y elige</h2>
+    <p>Ocho rondas. Le das al play, oyes una de las dos palabras y eliges cuál era. Puedes repetirla las veces que quieras: aquí nadie te mira.</p>
+
+    <div class="panel">
+      <div id="juego">
+        <div class="marcador">
+          <span id="ronda">Ronda 1 de 8</span>
+          <span id="aciertos">0 aciertos</span>
+        </div>
+        <div class="barra"><span id="progreso"></span></div>
+
+        <div class="escucha">
+          <button class="cta boton-play" id="play" type="button">▶ Escuchar</button>
+        </div>
+        <p class="pista" id="pista">Dale al play y fíjate en la duración y en la tensión del sonido, no en la letra.</p>
+
+        <div class="opciones" id="opciones"></div>
+
+        <p class="veredicto" id="veredicto"></p>
+
+        <div class="acciones">
+          <button class="cta cta-secundario oculto" id="lento" type="button">Otra vez, más lento</button>
+          <button class="cta oculto" id="siguiente" type="button">Siguiente</button>
+        </div>
+      </div>
+
+      <div id="final" class="oculto" style="text-align:center">
+        <p class="etiqueta" style="color:var(--cw-naranja)">Resultado</p>
+        <h3 id="nota" style="font-size:1.5rem"></h3>
+        <p id="comentario" style="margin:0 auto;color:var(--cw-tinta-suave)"></p>
+        <div class="acciones">
+          <button class="cta" id="reiniciar" type="button">Repetir el ejercicio</button>
+          <a class="cta cta-secundario" href="#dilo">Pasar a decirlo en voz alta</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aviso oculto" id="sin-voz">
+      <p><strong>Tu navegador no tiene voz en inglés disponible.</strong> Prueba en Chrome, Edge o Safari, o desde el móvil. El resto de la página funciona igual.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blanco" id="dilo">
+  <div class="envoltorio">
+    <h2>Ahora dilo tú</h2>
+    <p>Escucha la frase, ponla a velocidad lenta y repítela en voz alta tres veces. Exagera: para la <em>i</em> larga, sonríe y estira; para la corta, relaja la boca y córtala.</p>
+
+    <div class="frase">
+      <p>This ship is cheap, but I can't sleep.
+        <small>Barco corto, cheap y sleep largas. Nota cómo cambia la boca.</small></p>
+      <div>
+        <button class="mini" data-decir="This ship is cheap, but I can't sleep." data-rate="0.95" type="button">▶ Escuchar</button>
+        <button class="mini" data-decir="This ship is cheap, but I can't sleep." data-rate="0.55" type="button">Lento</button>
+      </div>
+    </div>
+
+    <div class="frase">
+      <p>He hit the beach and felt the heat.
+        <small>Hit corta entre dos largas. Si las dices todas iguales, se nota.</small></p>
+      <div>
+        <button class="mini" data-decir="He hit the beach and felt the heat." data-rate="0.95" type="button">▶ Escuchar</button>
+        <button class="mini" data-decir="He hit the beach and felt the heat." data-rate="0.55" type="button">Lento</button>
+      </div>
+    </div>
+
+    <div class="frase">
+      <p>Leave it if it doesn't fit.
+        <small>Leave larga, y después tres cortas seguidas. Trabalenguas puro.</small></p>
+      <div>
+        <button class="mini" data-decir="Leave it if it doesn't fit." data-rate="0.95" type="button">▶ Escuchar</button>
+        <button class="mini" data-decir="Leave it if it doesn't fit." data-rate="0.55" type="button">Lento</button>
+      </div>
+    </div>
+
+    <ul class="checks">
+      <li>Grábate con el móvil y escúchate justo después de la voz. Ahí es donde se ve la diferencia.</li>
+      <li>Si te sale igual las dos veces, exagera más. Es imposible pasarse al principio.</li>
+      <li>Dos minutos al día valen más que una hora el domingo.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="claro">
+  <div class="envoltorio">
+    <h2>Por qué te cuesta</h2>
+    <p>No es tu oído. Es que tu idioma no necesita esta diferencia, así que tu cerebro lleva años ignorándola.</p>
+
+    <div class="rejilla">
+      <article class="card">
+        <h3>No es corta y larga</h3>
+        <p>Es relajada y tensa. La /iː/ de <em>sheep</em> va con la boca estirada y los músculos apretados. La /ɪ/ de <em>ship</em> es floja, casi entre la i y la e españolas.</p>
+      </article>
+      <article class="card">
+        <h3>Tu «i» las tapa a las dos</h3>
+        <p>Al no existir el contraste en español, tu cabeza mete las dos en el mismo cajón. Por eso primero entrenas el oído: si no las distingues, no puedes producirlas.</p>
+      </article>
+      <article class="card">
+        <h3>El contexto no siempre salva</h3>
+        <p>Con <em>ship</em> y <em>sheep</em> se entiende por la frase. Con <em>sheet</em>, <em>beach</em> o <em>can't</em> el malentendido es bastante más incómodo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="envoltorio">
+    <p style="margin:0">Charly's Way · <a href="https://charlysway.com">charlysway.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var synth = window.speechSynthesis;
+  var voz = null;
+
+  function elegirVoz(){
+    if(!synth) return;
+    var vs = synth.getVoices() || [];
+    voz = vs.filter(function(v){return /^en[-_]GB/i.test(v.lang);})[0]
+       || vs.filter(function(v){return /^en[-_]US/i.test(v.lang);})[0]
+       || vs.filter(function(v){return /^en/i.test(v.lang);})[0]
+       || null;
+    if(!voz && vs.length){ document.getElementById('sin-voz').classList.remove('oculto'); }
+  }
+  if(synth){
+    elegirVoz();
+    synth.onvoiceschanged = elegirVoz;
+  } else {
+    document.getElementById('sin-voz').classList.remove('oculto');
+  }
+
+  function decir(texto, rate){
+    if(!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(texto);
+    u.lang = 'en-GB';
+    u.rate = rate || 0.9;
+    if(voz) u.voice = voz;
+    synth.speak(u);
+  }
+
+  /* ---- Ejercicio de pares mínimos ---- */
+  var pares = [
+    [{p:'ship',  i:'/ʃɪp/',   t:'barco'},        {p:'sheep', i:'/ʃiːp/',  t:'oveja'}],
+    [{p:'bit',   i:'/bɪt/',   t:'un poco'},      {p:'beat',  i:'/biːt/',  t:'ritmo'}],
+    [{p:'live',  i:'/lɪv/',   t:'vivir'},        {p:'leave', i:'/liːv/',  t:'irse'}],
+    [{p:'fit',   i:'/fɪt/',   t:'encajar'},      {p:'feet',  i:'/fiːt/',  t:'pies'}],
+    [{p:'chip',  i:'/tʃɪp/',  t:'patata frita'}, {p:'cheap', i:'/tʃiːp/', t:'barato'}],
+    [{p:'hit',   i:'/hɪt/',   t:'golpear'},      {p:'heat',  i:'/hiːt/',  t:'calor'}],
+    [{p:'rich',  i:'/rɪtʃ/',  t:'rico'},         {p:'reach', i:'/riːtʃ/', t:'alcanzar'}],
+    [{p:'slip',  i:'/slɪp/',  t:'resbalar'},     {p:'sleep', i:'/sliːp/', t:'dormir'}]
+  ];
+
+  var orden = [], idx = 0, aciertos = 0, objetivo = 0, respondida = false;
+
+  var $ronda = document.getElementById('ronda');
+  var $aciertos = document.getElementById('aciertos');
+  var $progreso = document.getElementById('progreso');
+  var $opciones = document.getElementById('opciones');
+  var $veredicto = document.getElementById('veredicto');
+  var $pista = document.getElementById('pista');
+  var $play = document.getElementById('play');
+  var $lento = document.getElementById('lento');
+  var $siguiente = document.getElementById('siguiente');
+  var $juego = document.getElementById('juego');
+  var $final = document.getElementById('final');
+
+  function barajar(a){
+    a = a.slice();
+    for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var x=a[i]; a[i]=a[j]; a[j]=x; }
+    return a;
+  }
+
+  function pintarRonda(){
+    respondida = false;
+    var par = orden[idx];
+    objetivo = Math.floor(Math.random()*2);
+    $ronda.textContent = 'Ronda ' + (idx+1) + ' de ' + orden.length;
+    $aciertos.textContent = aciertos + (aciertos === 1 ? ' acierto' : ' aciertos');
+    $progreso.style.width = (idx/orden.length*100) + '%';
+    $veredicto.textContent = '';
+    $pista.textContent = 'Dale al play y fíjate en la duración y en la tensión del sonido, no en la letra.';
+    $lento.classList.add('oculto');
+    $siguiente.classList.add('oculto');
+    $opciones.innerHTML = '';
+    par.forEach(function(op, n){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'opcion';
+      b.innerHTML = '<b>' + op.p + '</b><i>' + op.i + '</i><em>' + op.t + '</em>';
+      b.addEventListener('click', function(){ responder(n); });
+      $opciones.appendChild(b);
+    });
+    decir(par[objetivo].p, 0.85);
+  }
+
+  function responder(n){
+    if(respondida) return;
+    respondida = true;
+    var par = orden[idx];
+    var botones = $opciones.querySelectorAll('.opcion');
+    for(var i=0;i<botones.length;i++){ botones[i].disabled = true; }
+    botones[objetivo].classList.add('acierto');
+    if(n === objetivo){
+      aciertos++;
+      $veredicto.innerHTML = 'Eso es. Era <span>' + par[objetivo].p + '</span> ' + par[objetivo].i + '.';
+    } else {
+      botones[n].classList.add('fallo');
+      $veredicto.innerHTML = 'Casi. Era <span>' + par[objetivo].p + '</span> ' + par[objetivo].i + ', no ' + par[n].p + '.';
+    }
+    $aciertos.textContent = aciertos + (aciertos === 1 ? ' acierto' : ' aciertos');
+    $pista.textContent = 'Escúchala otra vez a cámara lenta y repítela en voz alta antes de seguir.';
+    $lento.classList.remove('oculto');
+    $siguiente.classList.remove('oculto');
+    $siguiente.textContent = (idx === orden.length-1) ? 'Ver resultado' : 'Siguiente';
+  }
+
+  function terminar(){
+    $progreso.style.width = '100%';
+    $juego.classList.add('oculto');
+    $final.classList.remove('oculto');
+    document.getElementById('nota').textContent = aciertos + ' de ' + orden.length;
+    var c;
+    if(aciertos === orden.length) c = 'Oído fino. Ahora toca que tu boca haga lo mismo que tu oreja.';
+    else if(aciertos >= 6) c = 'Vas bien. Repite el ejercicio hasta que no falles ninguna y luego pásate a decirlas tú.';
+    else if(aciertos >= 4) c = 'Estás justo donde empieza lo interesante. Otra vuelta, con los cascos puestos y sin mirar las opciones.';
+    else c = 'Tranqui, es lo normal la primera vez. Escucha cada palabra dos veces antes de elegir y vuelve a intentarlo.';
+    document.getElementById('comentario').textContent = c;
+  }
+
+  function empezar(){
+    orden = barajar(pares);
+    idx = 0; aciertos = 0;
+    $final.classList.add('oculto');
+    $juego.classList.remove('oculto');
+    pintarRonda();
+  }
+
+  $play.addEventListener('click', function(){ decir(orden[idx][objetivo].p, 0.85); });
+  $lento.addEventListener('click', function(){ decir(orden[idx][objetivo].p, 0.5); });
+  $siguiente.addEventListener('click', function(){
+    if(idx === orden.length-1){ terminar(); } else { idx++; pintarRonda(); }
+  });
+  document.getElementById('reiniciar').addEventListener('click', empezar);
+
+  var frases = document.querySelectorAll('[data-decir]');
+  for(var k=0;k<frases.length;k++){
+    (function(btn){
+      btn.addEventListener('click', function(){
+        decir(btn.getAttribute('data-decir'), parseFloat(btn.getAttribute('data-rate')));
+      });
+    })(frases[k]);
+  }
+
+  orden = barajar(pares);
+  pintarRonda();
+  if(synth) synth.cancel();
+})();
+</script>
+
+</body>
+</html>
