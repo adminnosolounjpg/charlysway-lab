@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ejemplo de estructura · Charly's Way</title>
+<link rel="icon" href="https://lp.charlysway.com/brandkit/assets/logos/logo-cw-azul.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+:root{
+  --cw-azul:#0B89B0;--cw-naranja:#F47149;--cw-oscuro:#243156;--cw-blanco:#fff;
+  --cw-naranja-hover:#E25D33;--cw-tinta:#243156;--cw-tinta-suave:#595959;
+  --cw-card:#EDF1F8;--cw-borde:#E1E7EF;
+  --cw-display:'Antonio',sans-serif;--cw-texto:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --cw-h1:clamp(2rem,1.4rem + 2.6vw,3.25rem);--cw-h2:clamp(1.5rem,1.2rem + 1.4vw,2.25rem);
+  --cw-body:clamp(1rem,.96rem + .2vw,1.125rem);--cw-radio-boton:8px;--cw-radio-card:24px;
+  --cw-seccion:clamp(3rem,6vw,5.5rem);--cw-ancho:1080px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--cw-texto);font-size:var(--cw-body);line-height:1.6;color:var(--cw-tinta);background:var(--cw-blanco)}
+.envoltorio{max-width:var(--cw-ancho);margin:0 auto;padding:0 24px}
+h1,h2{font-family:var(--cw-display);text-transform:uppercase;line-height:1.05;margin:0 0 .4em}
+h1{font-size:var(--cw-h1);font-weight:600;color:var(--cw-blanco)}
+h2{font-size:var(--cw-h2);font-weight:400;color:var(--cw-oscuro)}
+h3{font-size:1.1875rem;font-weight:700;color:var(--cw-oscuro);margin:0 0 .5em}
+p{max-width:62ch}
+.cabecera{background:var(--cw-blanco);border-bottom:1.5px solid var(--cw-borde)}
+.cabecera .envoltorio{display:flex;align-items:center;gap:24px;padding:16px 24px}
+.cabecera img{height:40px;width:auto;display:block}
+.etiqueta{display:inline-block;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8125rem;margin:0 0 12px;color:var(--cw-blanco);opacity:.85}
+.hero{background:var(--cw-azul) url('https://lp.charlysway.com/brandkit/assets/fotos/BG-03.jpg') center/cover no-repeat;color:var(--cw-blanco);padding:var(--cw-seccion) 0}
+.claro{background:var(--cw-blanco) url('https://lp.charlysway.com/brandkit/assets/fotos/bg-line-01-scaled.jpg') top center/cover no-repeat;padding:var(--cw-seccion) 0}
+.cta{display:inline-block;background:var(--cw-naranja);color:var(--cw-blanco);font-weight:700;text-transform:uppercase;
+  text-decoration:none;padding:15px 30px;border-radius:var(--cw-radio-boton);transition:background .15s ease;margin-top:8px}
+.cta:hover{background:var(--cw-naranja-hover)}
+.card{background:var(--cw-card);border:1.5px solid var(--cw-borde);border-radius:var(--cw-radio-card);padding:28px;margin-top:28px}
+.card p{margin:0;color:var(--cw-tinta-suave)}
+pre{background:var(--cw-card);border:1.5px solid var(--cw-borde);border-radius:12px;padding:20px;overflow-x:auto;font-size:.9rem}
+.pie{background:var(--cw-oscuro);color:var(--cw-blanco);padding:36px 0;font-size:.875rem}
+.pie p{margin:0;max-width:none}
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="envoltorio">
+    <img src="https://lp.charlysway.com/brandkit/assets/logos/logo-completo-azul.svg" alt="Charly's Way">
+  </div>
+</header>
+
+<section class="hero">
+  <div class="envoltorio">
+    <p class="etiqueta">Ejemplo para practicar</p>
+    <h1>Esta página vive en una carpeta</h1>
+    <p>Y la de al lado, en otra. Lo que ves en la dirección del navegador es exactamente cómo están organizados los archivos.</p>
+    <a class="cta" href="gracias/">Ir a la página de gracias</a>
+  </div>
+</section>
+
+<section class="claro">
+  <div class="envoltorio">
+    <h2>Lo que has subido</h2>
+    <p>Arrastraste una carpeta con esta forma, y cada archivo se convirtió en una dirección:</p>
+
+<pre>ejemplo-estructura/
+  index.html            →  la página que estás viendo
+  gracias/index.html    →  /gracias/</pre>
+
+    <div class="card">
+      <h3>La regla</h3>
+      <p>Una carpeta con un <strong>index.html</strong> dentro se convierte en una dirección limpia. Si quieres una página nueva, creas una carpeta nueva. No hay menús que configurar.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cómo enlazar entre páginas</h3>
+      <p>El botón de arriba apunta a <strong>gracias/</strong>. Fíjate en la barra del final: es lo que le dice al navegador que entre en la carpeta, en vez de buscar un archivo suelto.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="envoltorio">
+    <p>Material de práctica · El Lab de Charly's Way</p>
+  </div>
+</footer>
+
+</body>
+</html>
