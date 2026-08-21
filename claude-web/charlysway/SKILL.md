@@ -89,6 +89,32 @@ En la vista previa del artifact, las imágenes externas (logos, fondos) **salen 
 
 Si hace falta que se vean dentro de la vista previa mientras se itera, usa el logo en SVG inline de `references/assets.md` y color plano en vez de los fondos texturizados. Pero en la pieza final, referencia siempre las URLs oficiales.
 
+## Cómo se forman las direcciones (carpetas = URLs)
+
+En un sitio como este no hay base de datos ni menús que configurar: **la estructura de carpetas es la estructura de direcciones**. Entenderlo es lo que permite hacer varias páginas enlazadas en vez de una suelta.
+
+Si preparas esto y arrastras la carpeta `mi-web`, su contenido pasa a ser la raíz del sitio:
+
+```
+mi-web/
+  index.html            →  /
+  precios/index.html    →  /precios/
+  gracias/index.html    →  /gracias/
+  imagenes/foto.jpg     →  /imagenes/foto.jpg
+  nota.html             →  /nota
+```
+
+Reglas prácticas:
+
+- **Una carpeta con un `index.html` dentro = una dirección limpia.** Es la forma normal de crear una página nueva.
+- Un archivo suelto también vale: `nota.html` queda en `/nota`, sin la extensión.
+- **Enlaza entre páginas con la ruta desde la raíz y barra final:** `<a href="/precios/">`. Así funciona igual en cualquier despliegue.
+- Nombres en minúsculas, con guiones, sin acentos ni espacios. `guia-de-estilo`, no `Guía de Estilo`.
+- **Cada despliegue reemplaza todo lo anterior.** Si vas a tener varias páginas, súbelas todas juntas en la misma carpeta. No las vayas subiendo de una en una, porque cada subida borra la anterior.
+- Si escribes mal una dirección, **no verás un error, verás la portada**. Cuando esperes tu página y te salga la portada, lo primero que hay que revisar es el nombre de la carpeta.
+
+Esto es lo que permite montar un flujo completo para probar: una landing en `/`, su página de gracias en `/gracias/`, y un enlace entre las dos.
+
 ## Publicar la pieza
 
 Cuando la persona quiera su enlace, dile que haga esto:

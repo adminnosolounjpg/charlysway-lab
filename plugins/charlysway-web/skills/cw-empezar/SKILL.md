@@ -48,6 +48,22 @@ sandbox/guia-onboarding/index.html   →   lab.charlysway.com/guia-onboarding/
 
 El archivo tiene que llamarse `index.html`. La carpeta, en minúsculas, con guiones y sin acentos.
 
+### Varias páginas enlazadas
+
+La estructura de carpetas es la estructura de direcciones, así que puedes montar un flujo entero:
+
+```
+sandbox/
+  mi-landing/index.html          →  /mi-landing/
+  mi-landing/gracias/index.html  →  /mi-landing/gracias/
+  mi-landing/imagenes/foto.jpg   →  /mi-landing/imagenes/foto.jpg
+```
+
+- Una carpeta con `index.html` dentro es una dirección limpia.
+- Enlaza entre páginas con la ruta desde la raíz y barra final: `<a href="/mi-landing/gracias/">`.
+- Un archivo suelto también sirve: `nota.html` queda en `/nota`, sin extensión.
+- Si escribes mal una dirección **no verás un error, verás la portada del Lab**. Cuando esperes tu página y salga la portada, revisa el nombre de la carpeta.
+
 Para publicar:
 
 ```bash
