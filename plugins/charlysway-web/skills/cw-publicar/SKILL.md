@@ -27,25 +27,22 @@ Nombres de carpeta en minúsculas, con guiones, sin acentos ni espacios.
 
 ## Publicar
 
-Necesitas dos variables de entorno con las credenciales de la cuenta lab (no las de producción):
+Las credenciales del lab viven en el archivo `.env` de la raíz del proyecto, que está fuera de git. Wrangler las lee solo con pasarle `--env-file=.env`, así que no hay que exportar nada.
 
-```bash
-export CLOUDFLARE_ACCOUNT_ID="<id de la cuenta lab>"
-export CLOUDFLARE_API_TOKEN="<token de la cuenta lab>"
-```
+Si el archivo no existe, cópialo de `.env.example` y pide las credenciales. **Nunca uses credenciales de producción aquí.**
 
 **Para practicar o iterar** (cada persona tiene su propia URL y no pisa a nadie):
 
 ```bash
-npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true
+npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true --env-file=.env
 ```
 
-Eso devuelve una URL propia del tipo `https://<tu-nombre>.cw-lab.pages.dev`. Es la que se usa en clase.
+Eso devuelve una URL propia del tipo `https://<tu-nombre>.cw-lab.pages.dev`.
 
 **Para dejar la pieza publicada de verdad en el lab**, cuando ya está terminada:
 
 ```bash
-npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true
+npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true --env-file=.env
 ```
 
 Esa sí sale en `https://lab.charlysway.com/<carpeta>/`.

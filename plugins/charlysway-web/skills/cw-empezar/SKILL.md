@@ -11,12 +11,14 @@ De un HTML cualquiera a una página con la imagen de la marca y su enlace para c
 
 ## Preparar el equipo (esto se hace una vez)
 
-Las credenciales del Lab, que son solo del entorno de pruebas:
+Clona el repo y crea dentro un archivo llamado `.env` con las credenciales del Lab, que te pasan por privado:
 
-```bash
-export CLOUDFLARE_ACCOUNT_ID="..."
-export CLOUDFLARE_API_TOKEN="..."
 ```
+CLOUDFLARE_ACCOUNT_ID=...
+CLOUDFLARE_API_TOKEN=...
+```
+
+Ese archivo no se sube a ningún sitio, ya está excluido del repositorio. Y no hay que exportar nada: el comando de publicar lo lee solo.
 
 ## Tienes un HTML y quieres que parezca de Charly's Way
 
@@ -49,7 +51,7 @@ El archivo tiene que llamarse `index.html`. La carpeta, en minúsculas, con guio
 Para publicar:
 
 ```bash
-npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true
+npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true --env-file=.env
 ```
 
 Mientras estés probando y no quieras pisar lo de nadie, cambia `main` por tu nombre y tendrás una dirección propia solo para ti.
@@ -99,7 +101,7 @@ El Lab no aparece en Google, pero cualquiera con el enlace entra. Si no lo pondr
 | Te pasa esto | Haz esto |
 |---|---|
 | No aparece `/cw-marca` | Reinicia Claude Code. Si sigue sin salir, repite los dos comandos de instalación |
-| Error de autenticación al publicar | Te faltan las dos variables de entorno, o son de otra cuenta |
+| Error de autenticación al publicar | Falta el archivo `.env`, o le falta `--env-file=.env` al comando |
 | Publica pero la URL da 404 | El archivo tiene que llamarse `index.html` y estar dentro de `sandbox/tu-carpeta/` |
 | Se ve sin estilos ni imágenes | Rutas rotas. Pide que use las URLs oficiales de los assets |
 | Sale la versión antigua | Recarga con Ctrl+F5 |

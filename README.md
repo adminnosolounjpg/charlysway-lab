@@ -48,23 +48,18 @@ Cada pieza vive en su carpeta dentro de `sandbox/`, y el nombre de la carpeta es
 sandbox/bienvenida-equipo/index.html  →  lab.charlysway.com/bienvenida-equipo/
 ```
 
-Necesitas las credenciales del Lab en tu entorno (nunca las de producción):
-
-```bash
-export CLOUDFLARE_ACCOUNT_ID="<id de la cuenta lab>"
-export CLOUDFLARE_API_TOKEN="<token de la cuenta lab>"
-```
+Necesitas un archivo `.env` en la raíz con las credenciales del Lab (nunca las de producción). Cópialo de `.env.example`. No hay que exportar nada: wrangler lo lee con `--env-file=.env`.
 
 Mientras practicas, publica en tu propia rama para no pisar a nadie:
 
 ```bash
-npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true
+npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true --env-file=.env
 ```
 
 Cuando la pieza está terminada y quieres que salga en `lab.charlysway.com`:
 
 ```bash
-npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true
+npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true --env-file=.env
 ```
 
 ## Reglas del Lab
